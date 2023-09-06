@@ -4,6 +4,10 @@
 
 After cloning the repository, navigate into the project directory and run npm install to install the dependencies listed in the package.json file:
 
+## Documentasi API
+https://documenter.getpostman.com/view/9682865/2s9Y5bQ1Kd
+
+
 ### .ENV
 
 ```bash

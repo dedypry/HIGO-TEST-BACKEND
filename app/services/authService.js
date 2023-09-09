@@ -27,7 +27,9 @@ async function signWithEmail (body) {
     const user = await userModel.findOne({
         email: body.email
     })
-    if (!user) throw DataNotFound('Email Not Registred')
+    if (!user){
+         throw new Error('data not found')
+    }
 
 
     await comparePassword(user.password, body.password);

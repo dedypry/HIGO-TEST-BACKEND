@@ -8,5 +8,5 @@ mongoose.connect(process.env.MONGOURI, {
 
 
 const db = mongoose.connection
-db.on('error', (error) => console.log(error))
 db.once('open', () => console.log('db connected'))
+db.on('error', (error) => console.log(error))

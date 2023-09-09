@@ -2,18 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 const authController = require('../app/controllers/authController')
-const formController = require('../app/controllers/formController')
+const formController = require('../app/controllers/formController');
+const { handlerException } = require('../app/exceptions/handler');
 
 
-router.post('/signup', authController.signup);
-router.post('/sigin', authController.sigin);
+router.post('/signup', handlerException(authController.signup));
+router.post('/sigin', handlerException(authController.sigin));
 
-router.get('/form', formController.index);
-router.patch('/form/surveyor/:id', formController.surveyor);
-router.get('/form/:id', formController.detail);
-router.post('/form', formController.store);
-router.patch('/form/:id', formController.update);
-router.delete('/form/:id', formController.destroy);
+router.get('/form', handlerException(formController.index));
+router.patch('/form/surveyor/:id', handlerException(formController.surveyor));
+router.get('/form/:id', handlerException(formController.detail));
+router.post('/form', handlerException(formController.store));
+router.patch('/form/:id', handlerException(formController.update));
+router.delete('/form/:id', handlerException(formController.destroy));
 
 
 
